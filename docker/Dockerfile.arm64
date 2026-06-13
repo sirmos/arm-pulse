@@ -1,0 +1,29 @@
+# ArmBench — Arm64 Optimized Docker Image
+# Tested on Oracle Cloud Ampere A1, AWS Graviton3, GCP Axion
+FROM arm64v8/python:3.11-slim
+
+LABEL maintainer="ArmBench"
+LABEL description="KleidiAI-optimized LLM inference benchmark suite for Arm64"
+
+# System dependencies
+RUN apt-get update && apt-get install -y \
+    git cmake build-essential \
+    wget curl libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt \
+    && pip install huggingface-hub
+
+# Copy project
+COPY . .
+
+# Create models directory
+RUN mkdir -p models
+
+EXPOSE 8000
+
+CMD ["python", "-m", "uvicorn", "mcp_server.main:app", "--host", "0.0.0.0", "--port", "8000"]
