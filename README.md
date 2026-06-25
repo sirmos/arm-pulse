@@ -1,4 +1,4 @@
-# ⚡ ArmBench — Arm64 LLM Inference Benchmark Suite + MCP Server
+# ⚡ Arm Pulse — Arm64 LLM Inference Benchmark Suite + MCP Server
 
 > KleidiAI-optimized LLM benchmarking and inference server for Arm64 cloud infrastructure.
 > Built for the **Arm AI Optimization Challenge 2026**.
@@ -9,9 +9,9 @@
 
 ---
 
-## 🎯 What is ArmBench?
+## 🎯 What is Arm Pulse?
 
-ArmBench is a one-command benchmarking tool that:
+Arm Pulse is a one-command benchmarking tool that:
 
 1. **Deploys LLMs** (Llama 3.2) on Arm64 cloud instances using llama.cpp + KleidiAI
 2. **Measures real performance** — tokens/sec, time-to-first-token, memory usage across quantization levels (Q4_K_M vs Q8_0)
@@ -21,7 +21,7 @@ ArmBench is a one-command benchmarking tool that:
 ---
 
 ## 🏗️ Architecture
-armbench/
+arm-pulse/
 
 ├── benchmark/        # llama.cpp + KleidiAI inference engine + metrics
 
@@ -38,8 +38,8 @@ armbench/
 
 ### 1. Clone and setup
 ```bash
-git clone https://github.com/sirmos/armbench.git
-cd armbench
+git clone https://github.com/sirmos/arm-pulse.git
+cd arm-pulse
 bash scripts/setup.sh
 ```
 

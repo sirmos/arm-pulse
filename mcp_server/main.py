@@ -7,7 +7,7 @@ import uvicorn
 import os
 
 app = FastAPI(
-    title="ArmBench MCP Server",
+    title="Arm Pulse MCP Server",
     description="KleidiAI-optimized LLM inference server for Arm64 — MCP compatible",
     version="1.0.0",
 )
@@ -28,7 +28,7 @@ def root():
 @app.get("/api")
 def api_info():
     return {
-        "name": "ArmBench MCP Server",
+        "name": "Arm Pulse MCP Server",
         "version": "1.0.0",
         "description": "Arm64-optimized LLM inference with KleidiAI",
         "docs": "/docs",

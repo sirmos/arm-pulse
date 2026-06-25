@@ -1,8 +1,8 @@
 #!/bin/bash
-# ArmBench Setup Script for Arm64 (Oracle Cloud, AWS Graviton, etc.)
+# Arm Pulse Setup Script for Arm64 (Oracle Cloud, AWS Graviton, etc.)
 set -e
 
-echo "⚡ ArmBench Setup — Arm64 Optimized"
+echo "⚡ Arm Pulse Setup — Arm64 Optimized"
 echo "====================================="
 echo "Platform: $(uname -m) | $(uname -s)"
 echo ""

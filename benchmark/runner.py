@@ -115,7 +115,7 @@ def _simulate_inference(result: BenchmarkResult, model: ModelConfig) -> Benchmar
 
 def run_full_benchmark(models: List[ModelConfig]) -> List[BenchmarkResult]:
     results = []
-    console.print("\n[bold cyan]🚀 ArmBench - LLM Inference Benchmark[/bold cyan]")
+    console.print("\n[bold cyan]🚀 Arm Pulse - LLM Inference Benchmark[/bold cyan]")
     console.print(f"[dim]Platform: {get_platform_info()}[/dim]\n")
 
     for model in models:

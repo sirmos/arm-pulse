@@ -1,6 +1,6 @@
-# ArmBench
+# Arm Pulse
 
-ArmBench is an Arm64-optimized LLM inference benchmark suite and MCP (Model Context Protocol) compatible server. It is designed to leverage KleidiAI and llama.cpp optimizations on Arm64 cloud infrastructure.
+Arm Pulse is an Arm64-optimized LLM inference benchmark suite and MCP (Model Context Protocol) compatible server. It is designed to leverage KleidiAI and llama.cpp optimizations on Arm64 cloud infrastructure.
 
 ## Project Overview
 

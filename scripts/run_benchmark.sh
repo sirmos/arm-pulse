@@ -1,10 +1,10 @@
 #!/bin/bash
-# Run the full ArmBench benchmark suite
+# Run the full Arm Pulse benchmark suite
 set -e
 
 source .venv/bin/activate 2>/dev/null || true
 
-echo "⚡ Starting ArmBench Benchmark..."
+echo "⚡ Starting Arm Pulse Benchmark..."
 echo "Platform: $(uname -m)"
 echo ""
 

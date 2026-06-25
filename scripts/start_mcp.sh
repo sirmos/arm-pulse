@@ -1,11 +1,11 @@
 #!/bin/bash
-# Start the ArmBench MCP Server
+# Start the Arm Pulse MCP Server
 set -e
 
 source .venv/bin/activate 2>/dev/null || true
 
 PORT=${PORT:-8000}
-echo "⚡ Starting ArmBench MCP Server on port $PORT..."
+echo "⚡ Starting Arm Pulse MCP Server on port $PORT..."
 echo "   Docs: http://localhost:$PORT/docs"
 echo "   MCP tools: http://localhost:$PORT/mcp/tools"
 echo ""
