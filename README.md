@@ -1,3 +1,11 @@
+---
+title: Arm Pulse
+emoji: ⚡
+colorFrom: blue
+colorTo: cyan
+sdk: docker
+pinned: false
+---
 # ⚡ Arm Pulse — Arm64 LLM Inference Benchmark Suite + MCP Server
 
 > KleidiAI-optimized LLM benchmarking and inference server for Arm64 cloud infrastructure.
