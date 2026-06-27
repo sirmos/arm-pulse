@@ -6,7 +6,7 @@ colorTo: indigo
 sdk: docker
 pinned: false
 ---
-# ⚡ Arm Pulse — Arm64 LLM Inference Benchmark Suite + MCP Server
+# ⚡ Arm Pulse - Arm64 LLM Inference Benchmark Suite + MCP Server
 
 > KleidiAI-optimized LLM benchmarking and inference server for Arm64 cloud infrastructure.
 > Built for the **Arm AI Optimization Challenge 2026**.
@@ -22,9 +22,9 @@ pinned: false
 Arm Pulse is a one-command benchmarking tool that:
 
 1. **Deploys LLMs** (Llama 3.2) on Arm64 cloud instances using llama.cpp + KleidiAI
-2. **Measures real performance** — tokens/sec, time-to-first-token, memory usage across quantization levels (Q4_K_M vs Q8_0)
+2. **Measures real performance** tokens/sec, time-to-first-token, memory usage across quantization levels (Q4_K_M vs Q8_0)
 3. **Serves results** via an MCP-compatible FastAPI server any agent framework can call
-4. **Visualizes everything** in a clean real-time dashboard
+4. **Visualizes everything** in a clean real time dashboard
 
 ---
 
@@ -125,7 +125,7 @@ curl -X POST http://localhost:8000/generate \
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE)
+MIT License - see [LICENSE](LICENSE)
 
 ---
 
