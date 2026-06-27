@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-06-27T16:07:47.195124",
+  "results": [
+    {
+      "model_name": "Llama-3.2-3B-Q4_K_M",
+      "quant_level": "Q4_K_M",
+      "prompt_preview": "Explain what KleidiAI is and how it optimizes AI on Arm proc...",
+      "output_tokens": 19,
+      "time_to_first_token_ms": 1889.23,
+      "total_time_sec": 12.49,
+      "tokens_per_second": 9.53,
+      "memory_used_mb": 0.01,
+      "model_size_gb": 1.9,
+      "platform": "Linux | aarch64 | aarch64 | 1 CPUs",
+      "error": null
+    },
+    {
+      "model_name": "Llama-3.2-3B-Q4_K_M",
+      "quant_level": "Q4_K_M",
+      "prompt_preview": "What are the key advantages of running LLMs on Arm Neoverse ...",
+      "output_tokens": 19,
+      "time_to_first_token_ms": 1889.13,
+      "total_time_sec": 12.5,
+      "tokens_per_second": 9.53,
+      "memory_used_mb": 0.0,
+      "model_size_gb": 1.9,
+      "platform": "Linux | aarch64 | aarch64 | 1 CPUs",
+      "error": null
+    },
+    {
+      "model_name": "Llama-3.2-3B-Q4_K_M",
+      "quant_level": "Q4_K_M",
+      "prompt_preview": "Write a short Python function to calculate fibonacci numbers...",
+      "output_tokens": 19,
+      "time_to_first_token_ms": 1301.93,
+      "total_time_sec": 11.93,
+      "tokens_per_second": 8.45,
+      "memory_used_mb": 0.0,
+      "model_size_gb": 1.9,
+      "platform": "Linux | aarch64 | aarch64 | 1 CPUs",
+      "error": null
+    },
+    {
+      "model_name": "Llama-3.2-3B-Q8_0",
+      "quant_level": "Q8_0",
+      "prompt_preview": "Explain what KleidiAI is and how it optimizes AI on Arm proc...",
+      "output_tokens": 19,
+      "time_to_first_token_ms": 2235.84,
+      "total_time_sec": 72.36,
+      "tokens_per_second": 8.05,
+      "memory_used_mb": -2.27,
+      "model_size_gb": 3.4,
+      "platform": "Linux | aarch64 | aarch64 | 1 CPUs",
+      "error": null
+    },
+    {
+      "model_name": "Llama-3.2-3B-Q8_0",
+      "quant_level": "Q8_0",
+      "prompt_preview": "What are the key advantages of running LLMs on Arm Neoverse ...",
+      "output_tokens": 19,
+      "time_to_first_token_ms": 1990.74,
+      "total_time_sec": 44.88,
+      "tokens_per_second": 9.04,
+      "memory_used_mb": -1.03,
+      "model_size_gb": 3.4,
+      "platform": "Linux | aarch64 | aarch64 | 1 CPUs",
+      "error": null
+    },
+    {
+      "model_name": "Llama-3.2-3B-Q8_0",
+      "quant_level": "Q8_0",
+      "prompt_preview": "Write a short Python function to calculate fibonacci numbers...",
+      "output_tokens": 19,
+      "time_to_first_token_ms": 1380.76,
+      "total_time_sec": 46.96,
+      "tokens_per_second": 7.97,
+      "memory_used_mb": -0.27,
+      "model_size_gb": 3.4,
+      "platform": "Linux | aarch64 | aarch64 | 1 CPUs",
+      "error": null
+    }
+  ]
+}

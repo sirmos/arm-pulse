@@ -48,7 +48,7 @@ print(path)
         console.print(f"[red]✗[/red] Error: {e}")
         return None
 
-def run_inference(model_path: Path, prompt: str, model: ModelConfig, n_tokens: int = 200) -> BenchmarkResult:
+def run_inference(model_path: Path, prompt: str, model: ModelConfig, n_tokens: int = 20) -> BenchmarkResult:
     result = BenchmarkResult(
         model_name=model.name,
         quant_level=model.quant_level,
@@ -67,12 +67,12 @@ def run_inference(model_path: Path, prompt: str, model: ModelConfig, n_tokens: i
 
     try:
         proc = subprocess.run([
-            str(LLAMA_CPP_PATH),
+            str(LLAMA_CPP_PATH).replace("llama-cli", "llama-completion"),
             "-m", str(model_path),
             "-p", prompt,
-            "-n", str(n_tokens),
-            "--log-disable",
-            "-t", str(os.cpu_count() or 4),
+            "-n", str(n_tokens), "-c", "256", "-t", "1",
+            "-no-cnv",
+            "-t", "1",
         ], capture_output=True, text=True, timeout=300)
 
         end_time = time.time()
@@ -83,18 +83,20 @@ def run_inference(model_path: Path, prompt: str, model: ModelConfig, n_tokens: i
         result.output = proc.stdout.strip()
 
         # Parse llama.cpp timing output
-        timing_match = re.search(r'(\d+) tokens in ([\d.]+) ms', proc.stderr)
-        if timing_match:
-            tokens = int(timing_match.group(1))
-            ms = float(timing_match.group(2))
-            result.output_tokens = tokens
-            result.tokens_per_second = (tokens / ms) * 1000
+        combined = proc.stdout + proc.stderr
+        import re as _re
+        eval_m = _re.search(r'eval time.*?([\d.]+) tokens per second', combined)
+        tok_m = _re.search(r'eval time.*?(\d+) runs', combined)
+        ttft_m = _re.search(r'prompt eval time =\s+([\d.]+) ms', combined)
+        if eval_m:
+            result.tokens_per_second = float(eval_m.group(1))
+            result.output_tokens = int(tok_m.group(1)) if tok_m else 20
+            result.time_to_first_token_ms = float(ttft_m.group(1)) if ttft_m else 0
         else:
             words = len(result.output.split())
             result.output_tokens = int(words * 1.3)
             result.tokens_per_second = result.output_tokens / result.total_time_sec if result.total_time_sec > 0 else 0
-
-        result.time_to_first_token_ms = (result.total_time_sec * 1000) / max(result.output_tokens, 1)
+            result.time_to_first_token_ms = (result.total_time_sec * 1000) / max(result.output_tokens, 1)
 
     except Exception as e:
         result.error = str(e)
